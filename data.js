@@ -1,6 +1,15 @@
-//   http://newsapi.org/v2/top-headlines?country=in&category=Sports&apiKey=e7d779891ffd4a2081fdeb0e97fa8134
-var apiurl = "http://newsapi.org/v2/top-headlines?country=in&category=Sports&apiKey=";
-var apisecret = "e7d779891ffd4a2081fdeb0e97fa813"
+
+/*
+git remote add origin 
+git add .
+git status
+git commit -m "first commit"
+git push -u origin master
+
+git add . && git commit -m "first commit" && git push -u origin master
+*/
+
+
 var Catagories = [{
         "categorieName": "General",
         "imageAssetUrl": "https://images.unsplash.com/photo-1495020689067-958852a7765e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"

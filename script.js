@@ -1,4 +1,3 @@
-
 function StoryBubbles() {
   var story = document.getElementById("stories2");
 
@@ -17,33 +16,72 @@ function StoryBubbles() {
 }
 StoryBubbles();
 
-function NewsCardGenerator() {
+function NewsCardGenerator(title, imgurl, newscontent, urllink) {
   var story = document.getElementById("news-list");
   story.appendChild(ons.createElement(
     '<ons-card class="news">' +
-    '<img class="news-image" src="https://onsen.io/playground/assets/img/post-01.jpg">' +
+    '<img class="news-image" src="'+
+    imgurl +
+    '">' +
     '<div class="title news-title">' +
-    'YouTube introduces Video Chapters to make it easier to navigate through longer videos' +
+    title +
     '</div>' +
     '<div class="news-content">' +
-    'Tensions escalate between President Trump and his favorite social media platform, Google and Microsoft considering investing in the Indian telecom market and the Raspberry Pi foundation announces a new Raspberry Pi. Here’s your Daily Crunch for May 28, 2020. …' +
+    newscontent +
     '</div>' +
     '</ons-card>' 
   ));
 }
 
-NewsCardGenerator();
-NewsCardGenerator();
-NewsCardGenerator();
-NewsCardGenerator();
+function NewsList(newsdata){
+  if (newsdata.status== "ok"){
+    console.log("status: ok");
+    console.log("totalResults: "+newsdata.totalResults);
+    var story = document.getElementById("news-list");
+    story.innerHTML = "";
+    for (var i = 0; i < newsdata.totalResults; i++) {
+      NewsCardGenerator(
+        NewsDemo.articles[i].title,
+        NewsDemo.articles[i].urlToImage,
+        NewsDemo.articles[i].description,
+        NewsDemo.articles[i].urlToImage
+      );
+    }
+  } 
+}
 
+function requestdata(url) {
+  ///////////////////////////
+  function success() {
+    var data = JSON.parse(this.responseText);
+    console.log(data);
+  //  return data;
+}
 
-/*
-git remote add origin 
-git add .
-git status
-git commit -m "first commit"
-git push -u origin master
+function error(err) {
+   // console.log('Error Occurred :', err);
+}
 
-git add . && git commit -m "first commit" && git push -u origin master
-*/
+var xhr = new XMLHttpRequest();
+xhr.onload = success;
+xhr.onerror = error;
+xhr.open('GET', url);
+xhr.send();
+}
+
+var mynewsdata = [];
+function GetNews(catagori, country){
+//   http://newsapi.org/v2/top-headlines?country=in&category=Sports&apiKey=e7d779891ffd4a2081fdeb0e97fa8134
+var apisecret = "e7d779891ffd4a2081fdeb0e97fa8134" 
+if (country == undefined) country = "";
+else country = "country="+ country + "&";
+if (catagori == undefined) catagori = "category=General"+ "&";
+else catagori = "category=" + catagori+ "&";
+
+var apiurl = "https://newsapi.org/v2/top-headlines?" + country + catagori + "apiKey=" + apisecret
+mynewsdata = requestdata(apiurl);
+}
+
+GetNews("General","in");
+NewsList(NewsDemo);
+NewsList(NewsDemo);

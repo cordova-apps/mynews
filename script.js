@@ -55,7 +55,7 @@ function requestdata(url) {
   function success() {
     var data = JSON.parse(this.responseText);
     console.log(data);
-  //  return data;
+    return data;
 }
 
 function error(err) {
@@ -80,8 +80,8 @@ else catagori = "category=" + catagori+ "&";
 
 var apiurl = "https://newsapi.org/v2/top-headlines?" + country + catagori + "apiKey=" + apisecret
 mynewsdata = requestdata(apiurl);
+NewsList(mynewsdata);
 }
 
+NewsList(NewsDemo);
 GetNews("General","in");
-NewsList(NewsDemo);
-NewsList(NewsDemo);

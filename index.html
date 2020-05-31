@@ -33,52 +33,6 @@
 
         <div id="news-list"></div>
         <div id="demo"></div>
-
-        <div class="wifidata">
-          <input id="urllink"
-            value="http://newsapi.org/v2/top-headlines?country=in&category=Sports&apiKey=e7d779891ffd4a2081fdeb0e97fa8134">
-          <button class="buttons1" onclick='run();'>Hello<i class="fab fa-app-store"></i></button>
-          <input class="buttons1" type="button" value="0001" onclick='loadXMLDoc()'>
-          <p id="wifitext">
-            h
-          </p>
-
-          <script>
-            function loadXMLDoc() {
-              var url = document.getElementById("urllink").value;
-              var xhttp = new XMLHttpRequest();
-              xhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                  document.getElementById("wifitext").innerHTML =
-                    this.responseText;
-                }
-              };
-              xhttp.open("GET", url, true);
-              xhttp.send();
-            }
-
-            function requestdata2(url1) {
-              var xmlhttp = new XMLHttpRequest();
-              var url = url1;
-
-              xmlhttp.open("GET", url, true);
-              xmlhttp.onloadend = function () {
-                document.getElementById("wifitext").innerHTML = "status " + xmlhttp.status + "<br>response : " +
-                  xmlhttp.responseText;
-              }
-              xmlhttp.send();
-            }
-
-            function run() {
-              requestdata2("http://we2app.com");
-            }
-
-            function run2() {
-
-            }
-          </script>
-
-        </div>
         <script src="./script.js"></script>
     </ons-page>
   </body>

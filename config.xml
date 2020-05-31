@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.we2app.mynews"
+        version     = "1.2.2"
+        versionCode = "11" >
+        <!-- versionCode is optional and Android only -->
+        <preference name="phonegap-version" value="cli-8.0.0" />
+        
+        <!-- device required so we can detect if we are using iOS -->
+        <plugin name="cordova-plugin-whitelist" spec="~1.3.3" />
+   
+        
+        <allow-navigation href="*" />
+
+        <name>Flashlight</name>
+        <description>It is simple, fast and tiny in size. App size is under 200kB while installed size is below 400kB . It is a super lite app.</description>
+        <author href="http://we2app.com" email="atik@we2app.com">
+        Atik
+        </author>
+
+        <content src="index.html" />
+        
+        
+
+        <platform name="android">
+            <preference name="orientation" value="portrait" />
+            <icon src="icon.png" />
+        </platform>
+
+    </widget>

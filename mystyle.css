@@ -1,0 +1,66 @@
+.stories-tab2 {
+    padding: 5px 70px 5px 5px;
+    background-color: #EFEFF4;
+    height: auto;
+}
+
+.story2 {
+    display: inline-table;
+}
+
+.ons-swiper-target > * {
+    width: auto;
+  }
+
+.buttons1 {
+    padding: 5px 8px;
+    margin: 0px 2px;
+    background-color: white;
+    color: #555555;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    border: .5px solid rgba(0, 0, 0, .2);
+    border-radius: 15px;
+    display: inline-table;
+}
+
+.buttons1:focus {
+    outline: 0;
+}
+
+.buttons1:active .buttons1:hover .buttons1:after {
+    outline: none;
+    border: none;
+}
+
+.news {
+    margin: 0px 0px 0px 0px;
+    padding: 15px 15px 25px;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(175, 175, 175, 0.43);
+    border-radius: 0;
+  }
+  .news-image {
+    width: 100%;
+    height: 200px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+  }
+  .news-title {
+    font-size: 20px;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+  }
+  .news-content {
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+  }

@@ -21,8 +21,6 @@
 
         <content src="index.html" />
         
-        
-
         <platform name="android">
             <preference name="orientation" value="portrait" />
             <icon src="icon.png" />

@@ -39,5 +39,9 @@ NewsCardGenerator();
 
 
 /*
-git remote add origin https://github.com/phonegap-apps/mynews.git
+git remote add origin 
+git add .
+git status
+git commit -m "first commit"
+git push -u origin master
 */

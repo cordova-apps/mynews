@@ -52,22 +52,15 @@ function NewsList(newsdata){
 
 function requestdata(url) {
   ///////////////////////////
-  function success() {
-    var data = JSON.parse(this.responseText);
-    console.log(data);
-    return data;
-}
-
-function error(err) {
-   console.log('Error Occurred :', err);
-   document.getElementById("demo").innerHTML = "Error";
-}
-
-var xhr = new XMLHttpRequest();
-xhr.onload = success;
-xhr.onerror = error;
-xhr.open('GET', url);
-xhr.send();
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+      return JSON.parse(this.responseText);
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
 }
 
 var mynewsdata = [];

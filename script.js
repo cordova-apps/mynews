@@ -79,7 +79,7 @@ else country = "country="+ country + "&";
 if (catagori == undefined) catagori = "category=General"+ "&";
 else catagori = "category=" + catagori+ "&";
 
-var apiurl = "https://newsapi.org/v2/top-headlines?" + country + catagori + "apiKey=" + apisecret
+var apiurl = "http://newsapi.org/v2/top-headlines?" + country + catagori + "apiKey=" + apisecret
 mynewsdata = requestdata(apiurl);
 NewsList(mynewsdata);
 }

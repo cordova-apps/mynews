@@ -59,7 +59,8 @@ function requestdata(url) {
 }
 
 function error(err) {
-   // console.log('Error Occurred :', err);
+   console.log('Error Occurred :', err);
+   document.getElementById("demo").innerHTML = "Error";
 }
 
 var xhr = new XMLHttpRequest();

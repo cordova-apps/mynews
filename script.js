@@ -52,11 +52,13 @@ function NewsList(newsdata){
 
 function requestdata(url) {
   ///////////////////////////
+  var data = [];
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("demo").innerHTML = this.responseText;
-      return JSON.parse(this.responseText);
+      data = JSON.parse(this.responseText);
+      NewsList(data);
     }
   };
   xhttp.open("GET", url, true);
@@ -64,6 +66,7 @@ function requestdata(url) {
 }
 
 var mynewsdata = [];
+
 function GetNews(catagori, country){
 //   http://newsapi.org/v2/top-headlines?country=in&category=Sports&apiKey=e7d779891ffd4a2081fdeb0e97fa8134
 var apisecret = "e7d779891ffd4a2081fdeb0e97fa8134" 
@@ -73,9 +76,10 @@ if (catagori == undefined) catagori = "category=General"+ "&";
 else catagori = "category=" + catagori+ "&";
 
 var apiurl = "http://newsapi.org/v2/top-headlines?" + country + catagori + "apiKey=" + apisecret
-mynewsdata = requestdata(apiurl);
-NewsList(mynewsdata);
+// mynewsdata = 
+requestdata(apiurl);
+// NewsList(mynewsdata);
 }
 
-NewsList(NewsDemo);
+// NewsList(NewsDemo);
 GetNews("General","in");
